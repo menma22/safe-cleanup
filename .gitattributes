@@ -1,0 +1,7 @@
+# 行末の自動変換を無効化してバイト列を保存する。
+# このリポジトリのファイルはエンコーディング自体が動作に直結する:
+#   - 日本語入り .ps1 は BOM 付き UTF-8 でなければ PowerShell 5.1 が cp932 と誤読しパースが壊れる
+#   - safe-cleanup.ps1 は ASCII-only / BOM なし
+#   - safe-cleanup.task.xml は UTF-16（宣言と実体を一致させないと schtasks が受け付けない）
+# git に正規化させると、clone した先で「動かないコピー」が生まれる。
+* -text
